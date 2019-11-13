@@ -1,0 +1,45 @@
+$color-buy-on_sale : grey;
+
+@mixin buy-on_sale ($color, $weight){
+    color: $color;
+    font-weight: $weight;
+    border-radius: 5px;
+}
+
+.buy, .on_sale, .del {
+    p:nth-child(2){
+        @include buy-on_sale (grey, normal);
+    }
+    p:nth-child(3){
+        @include buy-on_sale (black, bold);
+    }
+    box-shadow: 0px 10px 5px 1px rgba(0,0,0,0.75);
+}
+
+
+.del{
+    img {
+        opacity: 0.8;
+    }        background:
+    linear-gradient(to top left,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0) calc(50% - 0.8px),
+        rgba(0,0,0,1) 50%,
+        rgba(0,0,0,0) calc(50% + 0.8px),
+        rgba(0,0,0,0) 100%),    }
+
+.on_sale{
+    @include buy-on_sale (gold, normal)
+}
+
+.sold {
+
+    img {
+        opacity: 0.8;
+    }        background:
+    linear-gradient(to top left,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0) calc(50% - 0.8px),
+        rgba(0,0,0,1) 50%,
+        rgba(0,0,0,0) calc(50% + 0.8px),
+        rgba(0,0,0,0) 100%),    }
